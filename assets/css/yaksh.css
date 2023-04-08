@@ -11215,6 +11215,7 @@ p {
 .portfolio-card .portfolio-card-overlay .portfolio-card-caption {
   display: block;
   position: absolute;
+  padding: 2px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
