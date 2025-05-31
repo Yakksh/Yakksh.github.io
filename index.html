@@ -1,268 +1,841 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- <meta name="description" content="Yaksh Sharma's Portfolio showcasing projects in Data Science, Machine Learning, and Software Development."> -->
-    <!-- <meta name="keywords" content="Yaksh Sharma, Portfolio, Data Science, Machine Learning, Software Development"> -->
+
+<!-- ================================
+     HEAD SECTION
+     ================================ -->
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Yaksh Sharma's professional portfolio showcasing expertise in Data Science, Machine Learning, and Software Development. Explore projects, skills, and accomplishments." />
-    
     <meta name="keywords" content="Yaksh Sharma, Yaksh Sharma Portfolio, Data Science Portfolio, Machine Learning Portfolio, Software Development Portfolio, Data Scientist, Machine Learning Engineer, Software Developer, AI Projects, Data Science Projects, Machine Learning Projects, Python Developer, Full Stack Developer" />
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
     <meta property="og:title" content="Yaksh Sharma Portfolio">
-
     <meta name="author" content="Yaksh Sharma">
 
-    <title>Yaksh Sharma Portfolio</title>
+    <title>Yaksh Sharma | Adaptive Developer & Data Engineer</title>
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/fevicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/fevicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/fevicon/favicon-16x16.png">
     <link rel="manifest" href="/fevicon/site.webmanifest">
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap main styles -->
-    <link rel="stylesheet" href="assets/css/yaksh.css">
-  </head>
 
-  <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    
-    <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-      <div class="container">
-          <a class="logo" href="#">Yaksh</a>         
-          <ul class="nav">
-              <li class="item">
-                  <a class="link" href="#home">Home</a>
-              </li>
-              <li class="item">
-                  <a class="link" href="#about">About</a>
-              </li>
-              <li class="item">
-                  <a class="link" href="#portfolio">Portfolio</a>
-              </li>
-              <li class="item">
-                  <a class="link" href="#blog">Blog</a>
-              </li>
-              <li class="item">
-                  <a class="link" href="#contact">Contact</a>
-              </li>
-          </ul>
-          <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-              <div class="hamburger-box">
-                <div class="hamburger-inner"></div>
-              </div>
-          </a>
-      </div>          
-  </nav>
-  <!-- End of Page Navbar -->
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- page header -->
-  <header id="home" class="header">
-      <div class="overlay"></div>
-      <div class="header-content container">
-          <h1 class="header-title">
-              <span class="up">HI!</span>
-              <span class="down">I am Yaksh Sharma</span>
-          </h1>
-          <p class="header-subtitle">DATA SCIENCE | MACHINE LEARNING | SOFTWARE DEVELOPMENT</p>            
+    <!-- External Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-          <!-- <button class="btn btn-primary">Visit My Works</button> -->
-      </div>              
-  </header>
-  <!-- end of page header -->
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="assets/css/modern-portfolio.css">
+</head>
 
-  <!-- about section -->
+<body>
+    <!-- ================================
+         ANIMATED BACKGROUND
+         ================================ -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
 
-    <section class="section" id="about">
-        <div class="container text-center">
-            <p class="section-subtitle">Who am I?</p>
-            <h6 class="section-title mb-6">About Me</h6>
-            <div class="row">
-                <div class="col">
-                    <img src="assets/imgs/theyaksh300x300.svg">
+    <!-- ================================
+         NAVIGATION HEADER
+         ================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-logo">
+                <span class="logo-text">Yaksh</span>
+                <span class="logo-dot">.</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================================
+         HERO SECTION
+         ================================ -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Hero Text Content -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="greeting">Hello, I'm</span>
+                        <span class="name">Yaksh Sharma</span>
+                        <span class="role" id="typed-text"></span>
+                    </h1>
+                    <p class="hero-description">
+                        Adaptive Computer Science graduate with a passion for AI, data science, and versatile software development.
+                        I thrive on learning new technologies and turning innovative ideas into impactful, real-world solutions.
+                    </p>
+
+                    <!-- Hero Action Buttons -->
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <p class="about-text">I hold a B.Tech in Computer Science from Rajasthan Institute of Engineering & Technology, with a CGPA of 9.2. My passion lies in AI, data science, and software development, where I enjoy transforming data into actionable insights.</p>
-                    <p class="about-text">I have a solid technical foundation in Python, SQL, JavaScript, and frameworks such as TensorFlow, PyTorch, React, and Django. My experience spans building APIs, web scraping, sentiment analysis, and creating machine learning forecasting models.</p>
-                    <p class="about-text">At FormulaQ Solutions, as well as during my time with DataWalk.in and DeepThought EduTech Ventures, I focused on delivering data-driven solutions that enhance business outcomes. Whether it's developing backend systems or analyzing data to guide strategy, I thrive on solving complex problems.</p>
-                    <p class="about-text">Fluent in English and Hindi, I enjoy working in diverse, collaborative teams. I'm eager to connect with like-minded professionals and explore opportunities in AI, machine learning, and software development.</p>
+
+                <!-- Hero Visual Elements -->
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="assets/imgs/theyaksh300x300.svg" alt="Yaksh Sharma">
+                            <div class="profile-ring"></div>
+                        </div>
+
+                        <!-- Floating Tech Icons -->
+                        <div class="floating-elements">
+                            <div class="floating-icon" style="--delay: 0s">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 1s">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 2s">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="floating-icon" style="--delay: 3s">
+                                <i class="fas fa-database"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Scroll Down</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================
+         ABOUT SECTION
+         ================================ -->
+    <section id="about" class="about">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-content">
+                <!-- About Text Content -->
+                <div class="about-text">
+                    <!-- Personal Introduction -->
+                    <div class="text-block">
+                        <h3>Who am I?</h3>
+                        <p>I'm an adaptive Computer Science graduate who loves working with diverse technologies. From AI and data science to full-stack development, I enjoy the challenge of learning new tools and frameworks to build innovative solutions that make a real difference.</p>
+                    </div>
+
+                    <!-- Professional Focus -->
+                    <div class="text-block">
+                        <h3>What do I do?</h3>
+                        <p>I have a versatile technical foundation spanning multiple technologies including Python, SQL, JavaScript, and frameworks such as TensorFlow, PyTorch, React, and Django. My adaptive approach allows me to quickly learn and implement new tools, whether it's building APIs, developing ML models, or creating full-stack applications.</p>
+                    </div>
+
+                    <!-- Experience Summary -->
+                    <div class="text-block">
+                        <h3>My Experience</h3>
+                        <p>At FormulaQ Solutions, as well as during my time with DataWalk.in and DeepThought EduTech Ventures, I focused on delivering data-driven solutions that enhance business outcomes. My flexibility with different technologies allows me to adapt quickly to new challenges, whether it's developing backend systems, analyzing data, or implementing DevOps workflows.</p>
+                    </div>
+
+                    <!-- Statistics Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="10">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="2">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Code Window -->
+                <div class="about-visual">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <span class="window-title">k.py</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">class</span> <span class="class-name">AdaptiveDeveloper</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="param">self</span>):
+        <span class="param">self</span>.name = <span class="string">"Yaksh Sharma"</span>
+        <span class="param">self</span>.role = <span class="string">"Adaptive Developer"</span>
+        <span class="param">self</span>.skills = [
+            <span class="string">"Python"</span>, <span class="string">"Machine Learning"</span>,
+            <span class="string">"AI"</span>, <span class="string">"SQL"</span>, <span class="string">"JavaScript"</span>
+        ]
+        <span class="param">self</span>.passion = <span class="string">"Learning & Innovation"</span>
+        <span class="param">self</span>.adaptability = <span class="string">"High"</span>
+
+    <span class="keyword">def</span> <span class="function">learn_new_tech</span>(<span class="param">self</span>, technology):
+        <span class="keyword">return</span> f<span class="string">"Quickly mastering {technology}!"</span>
+
+    <span class="keyword">def</span> <span class="function">solve_problems</span>(<span class="param">self</span>):
+        <span class="keyword">return</span> <span class="string">"Innovative solutions"</span></code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-  <!-- end of about section -->
+    <!-- ================================
+         SKILLS SECTION
+         ================================ -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">What I'm good at</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
 
-  <!-- portfolio section -->
-  <section class="section" id="portfolio">
-    <div class="container text-center">
-        <p class="section-subtitle">What I Did ?</p>
-        <h6 class="section-title mb-6">Portfolio</h6>
-        <!-- row 1 -->
-        <div class="row">
-            <div class="col-md-4">
-                <a href="https://github.com/Yakksh/Movie-Recommendation-System" target="_blank" class="portfolio-card">
-                    <img src="assets/imgs/movie_reco.jpg" class="portfolio-card-img">    
-                    <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                            <h4>Movie Recommendation System</h5>
-                            <p class="font-weight-normal">Category: Machine Learning</p>
-                        </span>                         
-                    </span>                  
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://github.com/Yakksh/AI-Resume-Analyzer" target="_blank" class="portfolio-card">
-                    <img class="portfolio-card-img" src="assets/imgs/airesum.jpg" class="img-responsive rounded">
-                    <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                            <h4>AI Resume Analyzer</h5>
-                            <p class="font-weight-normal">Category: Natural Language Processing</p>
-                        </span>                         
-                    </span>                         
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="https://github.com/Yakksh/car-park-counter" target="_blank" class="portfolio-card">
-                    <img class="portfolio-card-img" src="assets/imgs/carpark.jpg" class="img-responsive rounded">    
-                    <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                            <h4>Car Parking Counter</h5>
-                            <p class="font-weight-normal">Category: Computer Vision</p>
-                        </span>                         
-                    </span>                     
-                </a>
+            <div class="skills-content">
+                <!-- Skills Categories Filter -->
+                <div class="skills-categories">
+                    <div class="skill-category active" data-category="technical">
+                        <i class="fas fa-code"></i>
+                        <span>Technical Skills</span>
+                    </div>
+                    <div class="skill-category" data-category="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>Tools & Frameworks</span>
+                    </div>
+                    <div class="skill-category" data-category="soft">
+                        <i class="fas fa-users"></i>
+                        <span>Soft Skills</span>
+                    </div>
+                </div>
+
+                <!-- Skills Grid -->
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Technical Skills -->
+                    <div class="skill-item" data-category="technical">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <div class="skill-info">
+                            <h4>Python</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="technical">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <div class="skill-info">
+                            <h4>SQL</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="technical">
+                        <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                        <div class="skill-info">
+                            <h4>JavaScript</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="technical">
+                        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                        <div class="skill-info">
+                            <h4>Machine Learning</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Frameworks -->
+                    <div class="skill-item" data-category="tools" style="display: none;">
+                        <div class="skill-icon"><i class="fas fa-fire"></i></div>
+                        <div class="skill-info">
+                            <h4>TensorFlow</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="tools" style="display: none;">
+                        <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="skill-info">
+                            <h4>PyTorch</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="tools" style="display: none;">
+                        <div class="skill-icon"><i class="fab fa-react"></i></div>
+                        <div class="skill-info">
+                            <h4>React</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="tools" style="display: none;">
+                        <div class="skill-icon"><i class="fab fa-django"></i></div>
+                        <div class="skill-info">
+                            <h4>Django</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="82%"></div>
+                            </div>
+                            <span class="skill-percentage">82%</span>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="skill-item" data-category="soft" style="display: none;">
+                        <div class="skill-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="skill-info">
+                            <h4>Problem Solving</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="soft" style="display: none;">
+                        <div class="skill-icon"><i class="fas fa-users"></i></div>
+                        <div class="skill-info">
+                            <h4>Team Collaboration</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="soft" style="display: none;">
+                        <div class="skill-icon"><i class="fas fa-comments"></i></div>
+                        <div class="skill-info">
+                            <h4>Communication</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%"></div>
+                            </div>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-category="soft" style="display: none;">
+                        <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="skill-info">
+                            <h4>Innovation</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- end of row 1-->
+    </section>
 
-        <!-- row 2 -->
-        <div class="row">
-            <div class="col-md-4">
-                <a href="https://github.com/Yakksh/lung-disease-classifier" target="_blank" class="portfolio-card">
-                    <img src="assets/imgs/lung_classifier.jpg" class="portfolio-card-img">    
-                    <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                            <h4>Lung Disease Classifier</h5>
-                            <p class="font-weight-normal">Category: Computer Vision</p>
-                        </span>                         
-                    </span>                  
-                </a>
+    <!-- ================================
+         EXPERIENCE SECTION
+         ================================ -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">My journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+            </div>
+
+            <!-- Professional Timeline -->
+            <div class="timeline">
+                <!-- Current Position -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Developer</h3>
+                            <span class="company">FormulaQ Solutions</span>
+                            <span class="period">2023 - Present</span>
+                        </div>
+                        <p>Developing robust middleware solutions and RESTful APIs using Flask and Django frameworks. Implementing CI/CD pipelines and managing DevOps workflows for seamless deployment.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Flask</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">DevOps</span>
+                            <span class="tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Role -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Science & Analytics</h3>
+                            <span class="company">DataWalk.in</span>
+                            <span class="period">2022 - 2023</span>
+                        </div>
+                        <p>Analyzed complex datasets to extract meaningful insights and created comprehensive reports for stakeholders. Implemented data visualization solutions.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Scientist</h3>
+                            <span class="company">DeepThought EduTech Ventures</span>
+                            <span class="period">2021 - 2022</span>
+                        </div>
+                        <p>Built custom ML models for tagging pharmaceutical chemicals in text documents, making it easier to analyze documents. Also created insightful Tableau dashboards that helped stakeholders make data-driven business decisions.!</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>B.Tech Computer Science</h3>
+                            <span class="company">Rajasthan Institute of Engineering & Technology</span>
+                            <span class="period">2019 - 2023</span>
+                        </div>
+                        <p>Graduated with CGPA 9.2. Specialized in Data Structures, Algorithms, Machine Learning, and Software Engineering principles.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">CGPA 9.2</span>
+                            <span class="tag">Computer Science</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- end of row 2-->
-        
-    </div>
-    <!-- end of container -->
-</section> 
-<!-- end of portfolio section -->
-  
-<!-- blog section -->
-<section class="section" id="blog">
-  <!-- container -->
-  <div class="container text-center">
-      <p class="section-subtitle">Recent Posts?</p>
-      <h6 class="section-title mb-6">Blog</h6>
+    </section>
 
-      <!-- blog-wrapper -->
-      <div class="blog-card">
-          <div class="blog-card-header">
-              <img src="assets\imgs\Blogimg-1.jpg" class="blog-card-img">
-          </div>
-          <div class="blog-card-body">
-              <h5 class="blog-card-title">A Beginner's Guide to Big Data!</h6>
+    <!-- ================================
+         PORTFOLIO SECTION
+         ================================ -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">My work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
 
-              <p class="blog-card-caption">
-                  <a href="#">By: Yaksh</a>
-                  <!-- <a href="#"><i class="ti-heart text-danger"></i> 1</a>
-                  <a href="#"><i class="ti-comment"></i> 0</a> -->
-              </p>
-              <p>Have you ever wondered how much data you create every day just by using your computer, phone, or tablet? Did you know that every time you post on social media or make an online purchase, you’re generating data that adds up to massive amounts over time? Have you ever heard of big data?</p>
-              
-              <a href="https://medium.com/@Yakksh/a-beginners-guide-to-big-data-f0ff40ee5e3a" target="_blank" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-          </div>
-      </div>
-      <!-- end of blog wrapper -->
-      <!-- blog-wrapper -->
-      <div class="blog-card">
-          <div class="blog-card-header">
-              <img src="assets\imgs\Blogimg-2.jpg" class="blog-card-img">
-          </div>
-          <div class="blog-card-body">
-              <h5 class="blog-card-title">Thinking Outside the Box: A Beginner’s Guide to Design Thinking</h6>
+            <!-- Portfolio Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="cv">Computer Vision</button>
+                <button class="filter-btn" data-filter="nlp">NLP</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+            </div>
 
-              <p class="blog-card-caption">
-                  <a href="#">By: Yaksh</a>
-              </p>
-              <p>Do you find yourself stuck when trying to solve a problem? Are you struggling to come up with new ideas or unsure of where to even start? What if there was a solution that could help you find innovative answers to complex problems?</p>
-              
-              <a href="https://medium.com/@Yakksh/thinking-outside-the-box-a-beginners-guide-to-design-thinking-45cb3420a5dd" target="_blank" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-          </div>
-      </div>
-      <!-- end of blog wrapper -->
+            <!-- Projects Grid -->
+            <div class="portfolio-grid">
+                <!-- Movie Recommendation System -->
+                <div class="portfolio-card" data-category="ml">
+                    <div class="card-image">
+                        <img src="assets/imgs/movie_reco.jpg" alt="Movie Recommendation System">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://github.com/Yakksh/Movie-Recommendation-System" target="_blank" class="action-btn">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Machine Learning</div>
+                        <h3 class="card-title">Movie Recommendation System</h3>
+                        <p class="card-description">
+                            Built a collaborative filtering recommendation system using machine learning algorithms
+                            to suggest movies based on user preferences and viewing history.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Pandas</span>
+                        </div>
+                    </div>
+                </div>
 
-  </div>
-  <!-- end of container -->
-</section>
-<!-- end of blog section -->
+                <!-- AI Resume Analyzer -->
+                <div class="portfolio-card" data-category="nlp">
+                    <div class="card-image">
+                        <img src="assets/imgs/airesum.jpg" alt="AI Resume Analyzer">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://github.com/Yakksh/AI-Resume-Analyzer" target="_blank" class="action-btn">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Natural Language Processing</div>
+                        <h3 class="card-title">AI Resume Analyzer</h3>
+                        <p class="card-description">
+                            Developed an intelligent resume analysis tool using NLP techniques to extract key information,
+                            match skills with job requirements, and provide improvement suggestions.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">spaCy</span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- contact section -->
-<section class="section" id="contact">
-  <div class="container text-center">
-      <p class="section-subtitle">How can you communicate?</p>
-      <h6 class="section-title mb-5">Contact Me</h6>
-    <p class="section-subtitle mb-5">Email me at <a href="mailto:sharmayaksh945@gmail.com">sharmayaksh945@gmail.com</a></p>
+                <!-- Car Parking Counter -->
+                <div class="portfolio-card" data-category="cv">
+                    <div class="card-image">
+                        <img src="assets/imgs/carpark.jpg" alt="Car Parking Counter">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://github.com/Yakksh/car-park-counter" target="_blank" class="action-btn">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Computer Vision</div>
+                        <h3 class="card-title">Smart Car Parking Counter</h3>
+                        <p class="card-description">
+                            Created an automated parking space detection system using computer vision to monitor
+                            and count available parking spots in real-time.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Image Processing</span>
+                        </div>
+                    </div>
+                </div>
 
-    
-      <!-- <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
-          <div class="form-row">
-              <div class="form-group col-sm-6">
-                  <input type="text" size="50" class="form-control" placeholder="Your Name" required>                 
-              </div>
-              <div class="form-group col-sm-6">
-                  <input type="email" class="form-control" placeholder="Enter Email"requried>                 
-              </div>
-              <div class="form-group col-sm-12">
-                  <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Write Something"></textarea>
-              </div>
-              <div class="form-group col-sm-12 mt-3">
-                  <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">                  
-              </div>
-          </div>  
-      </form> -->
-      
-  </div>
+                <!-- Lung Disease Classifier -->
+                <div class="portfolio-card" data-category="cv">
+                    <div class="card-image">
+                        <img src="assets/imgs/lung_classifier.jpg" alt="Lung Disease Classifier">
+                        <div class="card-overlay">
+                            <div class="card-actions">
+                                <a href="https://github.com/Yakksh/lung-disease-classifier" target="_blank" class="action-btn">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">Computer Vision</div>
+                        <h3 class="card-title">Lung Disease Classifier</h3>
+                        <p class="card-description">
+                            Developed a deep learning model to classify lung diseases from X-ray images,
+                            helping in early detection and diagnosis of respiratory conditions.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">Medical AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- ================================
+         BLOG SECTION
+         ================================ -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Latest insights</span>
+                <h2 class="section-title">Blog Posts</h2>
+            </div>
 
-<!-- end of contact section -->
+            <!-- Blog Posts Grid -->
+            <div class="blog-grid">
+                <!-- Big Data Guide -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/imgs/Blogimg-1.jpg" alt="Big Data Guide">
+                        <div class="blog-category">Data Science</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-author">
+                                <i class="fas fa-user"></i>
+                                Yaksh Sharma
+                            </span>
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                Dec 2023
+                            </span>
+                        </div>
+                        <h3 class="blog-title">A Beginner's Guide to Big Data</h3>
+                        <p class="blog-excerpt">
+                            Have you ever wondered how much data you create every day just by using your computer,
+                            phone, or tablet? Explore the fascinating world of big data and its applications.
+                        </p>
+                        <a href="https://medium.com/@Yakksh/a-beginners-guide-to-big-data-f0ff40ee5e3a" target="_blank" class="blog-link">
+                            Read More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
 
+                <!-- Design Thinking Guide -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="assets/imgs/Blogimg-2.jpg" alt="Design Thinking">
+                        <div class="blog-category">Innovation</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-author">
+                                <i class="fas fa-user"></i>
+                                Yaksh Sharma
+                            </span>
+                            <span class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                Nov 2023
+                            </span>
+                        </div>
+                        <h3 class="blog-title">Thinking Outside the Box: A Beginner's Guide to Design Thinking</h3>
+                        <p class="blog-excerpt">
+                            Do you find yourself stuck when trying to solve a problem? Discover how design thinking
+                            can help you find innovative solutions to complex challenges.
+                        </p>
+                        <a href="https://medium.com/@Yakksh/thinking-outside-the-box-a-beginners-guide-to-design-thinking-45cb3420a5dd" target="_blank" class="blog-link">
+                            Read More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-<!-- footer -->
-<div class="container">
-  <footer class="footer">       
-      <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; Yaksh Sharma</p>
-      <div class="social-links text-right m-auto ml-sm-auto">
-        <a href="https://www.linkedin.com/in/yaksh-sharma/" target='_blank' class="link"><i class="ti-linkedin"></i></a>
-          <a href="https://github.com/Yakksh" target='_blank' class="link"><i class="ti-github"></i></a>
-          <a href="https://www.instagram.com/yaksh_sharma_/" target="_blank" class="link"><i class="ti-instagram"></i></a>
-          <!-- <a href="javascript:void(0)" class="link"><i class="ti-email"></i></a> -->
-      </div>
-  </footer>
-</div> <!-- end of page footer -->
+    <!-- ================================
+         CONTACT SECTION
+         ================================ -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <span class="section-subtitle">Let's connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
 
-	<!-- core  -->
-  <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-  <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:sharmayaksh945@gmail.com">sharmayaksh945@gmail.com</a>
+                        </div>
+                    </div>
 
-  <!-- bootstrap 3 affix -->
-<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+                    <!-- LinkedIn -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/yaksh-sharma/" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
 
-  <!-- Yaksh js -->
-  <script src="assets/js/yaksh.js"></script>
+                    <!-- GitHub -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/Yakksh" target="_blank">View my code</a>
+                        </div>
+                    </div>
 
+                    <!-- Instagram -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Instagram</h4>
+                            <a href="https://www.instagram.com/yaksh_sharma_/" target="_blank">Follow me</a>
+                        </div>
+                    </div>
+                </div>
 
-  </body>
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================================
+         FOOTER
+         ================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Copyright -->
+                <div class="footer-text">
+                    <p>&copy; <span id="current-year"></span> Yaksh Sharma. All rights reserved.</p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/yaksh-sharma/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Yakksh" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yaksh_sharma_/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:sharmayaksh945@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================================
+         JAVASCRIPT
+         ================================ -->
+    <script src="assets/js/modern-portfolio.js"></script>
+</body>
 </html>
