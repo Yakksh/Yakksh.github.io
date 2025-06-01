@@ -18,9 +18,9 @@
     --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
     --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
 
-    /* Spacing */
-    --section-padding: 100px 0;
-    --container-padding: 0 20px;
+    /* Responsive Spacing */
+    --section-padding: clamp(50px, 8vw, 100px) 0;
+    --container-padding: 0 clamp(15px, 4vw, 20px);
     --border-radius: 16px;
     --border-radius-lg: 24px;
 
@@ -74,8 +74,8 @@ body {
 }
 
 .orb-1 {
-    width: 400px;
-    height: 400px;
+    width: min(400px, 70vw);
+    height: min(400px, 70vw);
     background: var(--gradient-primary);
     top: 10%;
     left: 10%;
@@ -83,8 +83,8 @@ body {
 }
 
 .orb-2 {
-    width: 300px;
-    height: 300px;
+    width: min(300px, 50vw);
+    height: min(300px, 50vw);
     background: var(--gradient-secondary);
     top: 60%;
     right: 10%;
@@ -92,8 +92,8 @@ body {
 }
 
 .orb-3 {
-    width: 200px;
-    height: 200px;
+    width: min(200px, 40vw);
+    height: min(200px, 40vw);
     background: var(--gradient-accent);
     bottom: 20%;
     left: 50%;
@@ -173,7 +173,7 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -250,7 +250,7 @@ body {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: clamp(2rem, 6vw, 4rem);
     align-items: center;
 }
 
@@ -301,7 +301,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 12px 24px;
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
     border-radius: var(--border-radius);
     text-decoration: none;
     font-weight: 600;
@@ -310,6 +310,7 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    min-height: 44px;
 }
 
 .btn-primary {
@@ -353,8 +354,8 @@ body {
 
 .profile-card {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: min(300px, 80vw);
+    height: min(300px, 80vw);
 }
 
 .profile-image {
@@ -481,7 +482,7 @@ section {
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: clamp(2rem, 6vw, 4rem);
     align-items: center;
 }
 
@@ -572,9 +573,10 @@ section {
 .code-content {
     padding: 1.5rem;
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     line-height: 1.6;
     overflow-x: auto;
+    word-wrap: break-word;
 }
 
 .keyword { color: #ff79c6; }
@@ -615,7 +617,7 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
 }
 
@@ -806,7 +808,7 @@ section {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
     gap: 2rem;
 }
 
@@ -926,7 +928,7 @@ section {
 /* Blog Section */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
     gap: 2rem;
 }
 
@@ -1017,7 +1019,7 @@ section {
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: clamp(2rem, 6vw, 4rem);
     align-items: start;
 }
 
@@ -1082,12 +1084,12 @@ section {
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px 0;
+    padding: clamp(12px, 3vw, 16px) 0;
     background: transparent;
     border: none;
     border-bottom: 2px solid var(--glass-border);
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     transition: var(--transition-fast);
 }
 
@@ -1232,6 +1234,90 @@ section {
         text-align: center;
         flex-direction: column;
     }
+
+    /* Hide floating icons on tablets */
+    .floating-elements {
+        display: none;
+    }
+
+    /* Touch-friendly interactions */
+    .btn:active,
+    .skill-category:active,
+    .filter-btn:active,
+    .action-btn:active,
+    .social-link:active {
+        transform: scale(0.95);
+    }
+
+    /* Improved touch targets */
+    .social-link {
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-link {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    /* Enhanced touch feedback for cards */
+    .portfolio-card:active,
+    .blog-card:active,
+    .skill-item:active {
+        transform: scale(0.98);
+    }
+
+    /* Better spacing for touch interactions */
+    .portfolio-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        min-height: 44px;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --section-padding: clamp(30px, 6vw, 50px) 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    .skills-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-category {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    .timeline-item {
+        padding-left: 2rem !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1251,6 +1337,52 @@ section {
 
     .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .profile-card {
+        width: min(250px, 90vw);
+        height: min(250px, 90vw);
+    }
+
+    .code-content {
+        font-size: 0.8rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --section-padding: 30px 0;
+        --container-padding: 0 15px;
+    }
+
+    .profile-card {
+        width: min(200px, 95vw);
+        height: min(200px, 95vw);
+    }
+
+    .floating-elements {
+        display: none;
+    }
+
+    .btn {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem !important;
+    }
+
+    .timeline-marker {
+        width: 30px;
+        height: 30px;
+        left: -15px !important;
     }
 }
 
