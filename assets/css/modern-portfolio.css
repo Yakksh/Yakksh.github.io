@@ -441,6 +441,7 @@ section {
     font-weight: 300;
     font-style: italic;
     margin-top: 1rem;
+    min-height: 1.8em;
 }
 
 /* Hero Desc Box */
