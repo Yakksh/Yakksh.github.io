@@ -30,6 +30,12 @@
     --font-primary: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
+    /* Responsive Typography */
+    --text-size-h3: clamp(0.95rem, 2.5vw, 1.5rem);
+    --text-size-p: clamp(0.8rem, 2vw, 1rem);
+    --text-size-card-h3: clamp(0.95rem, 2.2vw, 1.3rem);
+    --text-size-card-p: clamp(0.75rem, 1.8vw, 0.95rem);
+
     /* Animations */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
@@ -835,14 +841,22 @@ section {
     border-left-color: var(--primary-color);
 }
 
-@media (min-width: 501px) {
+/* Enable hover effects on larger screens only */
+@media (hover: hover) and (min-width: 501px) {
     .text-block:hover {
         transform: translateX(5px);
+    }
+
+    .interest-card:hover,
+    .portfolio-card:hover,
+    .blog-card:hover,
+    .skill-item:hover {
+        transform: translateY(-5px);
     }
 }
 
 .text-block h3 {
-    font-size: clamp(0.95rem, 2.5vw, 1.5rem);
+    font-size: var(--text-size-h3);
     color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 700;
@@ -853,9 +867,7 @@ section {
 .text-block p {
     color: var(--text-secondary);
     line-height: 1.8;
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    font-size: var(--text-size-p);
 }
 
 .stats-grid {
@@ -1250,7 +1262,7 @@ section {
 
 .interest-card h3 {
     color: var(--text-primary);
-    font-size: clamp(0.95rem, 2.2vw, 1.3rem);
+    font-size: var(--text-size-card-h3);
     margin-bottom: 1rem;
     font-weight: 600;
 }
@@ -1258,9 +1270,7 @@ section {
 .interest-card p {
     color: var(--text-secondary);
     line-height: 1.7;
-    font-size: clamp(0.75rem, 1.8vw, 0.95rem);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    font-size: var(--text-size-card-p);
 }
 
 /* Timeline */
@@ -1860,7 +1870,9 @@ section {
     border-color: transparent;
 }
 
-/* Responsive Design */
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
 
 /* Medium screens - Stack About section earlier */
 @media (max-width: 900px) {
@@ -1874,7 +1886,7 @@ section {
     }
 }
 
-/* Tablet - Adjust Bento Layout */
+/* ========== TABLET (≤1024px) ========== */
 @media (max-width: 1024px) {
     .hero-content {
         grid-template-columns: repeat(8, 1fr);
@@ -1914,6 +1926,7 @@ section {
     }
 }
 
+/* ========== MOBILE (≤768px) ========== */
 @media (max-width: 768px) {
     /* Hero - Stack on Mobile */
     .hero-content {
@@ -2015,25 +2028,12 @@ section {
         gap: 1.5rem;
     }
 
-    .interest-card:nth-child(1),
-    .interest-card:nth-child(2),
-    .interest-card:nth-child(3),
-    .interest-card:nth-child(4),
-    .interest-card:nth-child(5),
-    .interest-card:nth-child(6) {
+    /* Reset diagonal positioning on mobile */
+    .interest-card {
         transform: translate(0, 0);
     }
 
     .interest-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .interest-card:nth-child(1):hover,
-    .interest-card:nth-child(2):hover,
-    .interest-card:nth-child(3):hover,
-    .interest-card:nth-child(4):hover,
-    .interest-card:nth-child(5):hover,
-    .interest-card:nth-child(6):hover {
         transform: translateY(-5px);
     }
 
@@ -2042,8 +2042,7 @@ section {
         gap: 1.5rem;
     }
 
-    .stat-item:nth-child(1),
-    .stat-item:nth-child(3) {
+    .stat-item {
         transform: translateY(0);
     }
 
@@ -2051,21 +2050,12 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .contact-link-card:nth-child(1),
-    .contact-link-card:nth-child(2),
-    .contact-link-card:nth-child(3),
-    .contact-link-card:nth-child(4) {
+    /* Reset horizontal positioning on mobile */
+    .contact-link-card {
         transform: translateX(0);
     }
 
     .contact-link-card:hover {
-        transform: translateY(-5px);
-    }
-
-    .contact-link-card:nth-child(1):hover,
-    .contact-link-card:nth-child(2):hover,
-    .contact-link-card:nth-child(3):hover,
-    .contact-link-card:nth-child(4):hover {
         transform: translateY(-5px);
     }
 
@@ -2127,7 +2117,7 @@ section {
     }
 }
 
-/* Small mobile screens - Additional scaling */
+/* ========== SMALL MOBILE (≤500px) ========== */
 @media (max-width: 500px) {
     :root {
         --section-padding: 35px 0;
@@ -2169,10 +2159,6 @@ section {
         margin-bottom: 1.3rem;
         width: 100%;
         max-width: 100%;
-    }
-
-    .text-block:hover {
-        transform: none;
     }
 
     .text-block h3 {
@@ -2236,6 +2222,7 @@ section {
     }
 }
 
+/* ========== MOBILE MEDIUM (≤600px) ========== */
 @media (max-width: 600px) {
     :root {
         --section-padding: clamp(30px, 6vw, 50px) 0;
@@ -2304,6 +2291,7 @@ section {
     }
 }
 
+/* ========== MOBILE SMALL (≤480px) ========== */
 @media (max-width: 480px) {
     :root {
         --section-padding: 30px 0;
@@ -2386,7 +2374,7 @@ section {
     }
 }
 
-/* Very small screens */
+/* ========== MOBILE EXTRA SMALL (≤400px) ========== */
 @media (max-width: 400px) {
     .container {
         padding: 0 8px;
@@ -2406,6 +2394,7 @@ section {
     }
 }
 
+/* ========== MOBILE MINI (≤360px) ========== */
 @media (max-width: 360px) {
     :root {
         --section-padding: 25px 0;
@@ -2452,10 +2441,6 @@ section {
         padding-left: 0.4rem;
         margin-bottom: 1rem;
         width: 100%;
-    }
-
-    .text-block:hover {
-        transform: none;
     }
 
     .text-block h3 {
@@ -2517,7 +2502,7 @@ section {
     }
 }
 
-/* Extra small screens - 320px and below */
+/* ========== MOBILE MICRO (≤320px) ========== */
 @media (max-width: 320px) {
     :root {
         --container-padding: 0 5px;
@@ -2588,7 +2573,11 @@ section {
     }
 }
 
-/* Utility Classes */
+/* ================================
+   UTILITY CLASSES
+   ================================ */
+
+/* Animation Utilities */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -2605,6 +2594,19 @@ section {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* Width Utilities */
+.full-width {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Disable transforms on small screens */
+@media (max-width: 500px) {
+    .no-transform-mobile {
+        transform: none !important;
+    }
 }
 
 /* Loading Animation */

@@ -1,7 +1,10 @@
-// Modern Portfolio JavaScript
+/**
+ * Modern Portfolio JavaScript
+ * Optimized for performance and maintainability
+ */
 
 // DOM Content Loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     initNavigation();
     initTypingAnimation();
@@ -13,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimation();
     initSmoothScrolling();
     updateCurrentYear();
+    initLoadingScreen();
+    initKeyboardNavigation();
 });
 
 // Navigation functionality
@@ -397,20 +402,6 @@ function showNotification(message, type = 'info') {
     }, 5000);
 }
 
-// Parallax effect for hero section
-function initParallaxEffect() {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.parallax');
-
-        parallaxElements.forEach(element => {
-            const speed = element.dataset.speed || 0.5;
-            const yPos = -(scrolled * speed);
-            element.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-}
-
 // Loading screen
 function initLoadingScreen() {
     const loading = document.createElement('div');
@@ -426,19 +417,19 @@ function initLoadingScreen() {
     });
 }
 
-// Initialize loading screen
-initLoadingScreen();
-
 // Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        // Close mobile menu
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
-});
+function initKeyboardNavigation() {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            if (navToggle && navMenu) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+    });
+}
 
 // Performance optimization: Throttle scroll events
 function throttle(func, limit) {
@@ -461,54 +452,20 @@ const throttledScrollHandler = throttle(() => {
 
 window.addEventListener('scroll', throttledScrollHandler);
 
-// Intersection Observer for better performance
+// Utility: Create Intersection Observer
 const createObserver = (callback, options = {}) => {
     const defaultOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
-
     return new IntersectionObserver(callback, { ...defaultOptions, ...options });
 };
 
-// Add CSS animations keyframes dynamically
-const addAnimationStyles = () => {
+// Add notification styles dynamically
+const initNotificationStyles = () => {
     const style = document.createElement('style');
     style.textContent = `
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         .notification-content {
             display: flex;
             align-items: center;
@@ -537,42 +494,5 @@ const addAnimationStyles = () => {
     document.head.appendChild(style);
 };
 
-// Initialize additional styles
-addAnimationStyles();
-
-// Easter egg: Konami code
-let konamiCode = [];
-const konamiSequence = [
-    'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-    'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-    'KeyB', 'KeyA'
-];
-
-document.addEventListener('keydown', (e) => {
-    konamiCode.push(e.code);
-    if (konamiCode.length > konamiSequence.length) {
-        konamiCode.shift();
-    }
-
-    if (konamiCode.join(',') === konamiSequence.join(',')) {
-        showNotification('🎉 Konami Code activated! You found the easter egg!', 'success');
-        // Add some fun effect
-        document.body.style.animation = 'rainbow 2s ease-in-out';
-        setTimeout(() => {
-            document.body.style.animation = '';
-        }, 2000);
-    }
-});
-
-// Add rainbow animation for easter egg
-const rainbowStyle = document.createElement('style');
-rainbowStyle.textContent = `
-    @keyframes rainbow {
-        0% { filter: hue-rotate(0deg); }
-        25% { filter: hue-rotate(90deg); }
-        50% { filter: hue-rotate(180deg); }
-        75% { filter: hue-rotate(270deg); }
-        100% { filter: hue-rotate(360deg); }
-    }
-`;
-document.head.appendChild(rainbowStyle);
+// Initialize notification styles
+initNotificationStyles();
