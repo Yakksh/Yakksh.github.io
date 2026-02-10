@@ -1,0 +1,8 @@
+# robots.txt for yakksh.github.io
+# Allow all search engine crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yakksh.github.io/sitemap.xml
